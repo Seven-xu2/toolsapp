@@ -20,14 +20,22 @@ export default {
   data() {
     return {
       authStore: useAuthStore(),
+      allowGuestLogin: false,
       form: {
         phone: '',
         password: ''
       }
     }
   },
+  onLoad(options) {
+    this.allowGuestLogin = !!(options && options.forceLogin)
+  },
   onShow() {
-    if (this.authStore.isLoggedIn() || this.authStore.isGuest()) {
+    if (this.authStore.isLoggedIn()) {
+      uni.reLaunch({ url: '/src/pages/home/index' })
+      return
+    }
+    if (this.authStore.isGuest() && !this.allowGuestLogin) {
       uni.reLaunch({ url: '/src/pages/home/index' })
     }
   },

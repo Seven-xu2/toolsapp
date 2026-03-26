@@ -31,6 +31,12 @@ export function useToolStore() {
   const authStore = useAuthStore()
 
   async function loadTools() {
+    if (!authStore.isLoggedIn()) {
+      state.tools = getLocalToolCatalog()
+      state.usingLocalCatalog = true
+      return state.tools
+    }
+
     try {
       var remoteTools = await fetchTools({ silent: true })
       state.tools = normalizeTools(remoteTools)

@@ -9,7 +9,7 @@ export function promptLoginRequired(featureName) {
     cancelText: '稍后再说',
     success: function (res) {
       if (res.confirm) {
-        uni.navigateTo({ url: '/src/pages/auth/login' })
+        uni.navigateTo({ url: '/src/pages/auth/login?forceLogin=1' })
       }
     }
   })

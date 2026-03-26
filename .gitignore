@@ -3,3 +3,5 @@ mobile/unpackage/
 mobile/dist/
 mobile/node_modules/
 *.log
+.mcp-cache/
+.mcp/

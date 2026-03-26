@@ -85,7 +85,7 @@ export default {
       uni.reLaunch({ url: '/src/pages/auth/login' })
     },
     goLogin() {
-      uni.navigateTo({ url: '/src/pages/auth/login' })
+      uni.navigateTo({ url: '/src/pages/auth/login?forceLogin=1' })
     }
   }
 }
