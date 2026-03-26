@@ -1,0 +1,26 @@
+{
+  "easycom": {
+    "autoscan": true
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "全栈工具箱APP",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f7fb"
+  },
+  "pages": [
+    { "path": "src/pages/auth/login", "style": { "navigationBarTitleText": "登录" } },
+    { "path": "src/pages/auth/register", "style": { "navigationBarTitleText": "注册" } },
+    { "path": "src/pages/home/index", "style": { "navigationBarTitleText": "工具箱" } },
+    { "path": "src/pages/tools/calculator", "style": { "navigationBarTitleText": "计算器" } },
+    { "path": "src/pages/tools/unit-converter", "style": { "navigationBarTitleText": "单位转换" } },
+    { "path": "src/pages/tools/flashlight", "style": { "navigationBarTitleText": "手电筒" } },
+    { "path": "src/pages/tools/qrcode-generator", "style": { "navigationBarTitleText": "二维码生成" } },
+    { "path": "src/pages/tools/timestamp-converter", "style": { "navigationBarTitleText": "时间戳转换" } },
+    { "path": "src/pages/tools/text-tools", "style": { "navigationBarTitleText": "文本工具" } },
+    { "path": "src/pages/favorites/index", "style": { "navigationBarTitleText": "我的收藏" } },
+    { "path": "src/pages/history/index", "style": { "navigationBarTitleText": "使用历史" } },
+    { "path": "src/pages/profile/index", "style": { "navigationBarTitleText": "个人中心" } },
+    { "path": "src/pages/profile/edit-nickname", "style": { "navigationBarTitleText": "修改昵称" } }
+  ]
+}

@@ -1,0 +1,5 @@
+backend/target/
+mobile/unpackage/
+mobile/dist/
+mobile/node_modules/
+*.log

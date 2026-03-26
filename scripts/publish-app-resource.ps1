@@ -1,0 +1,2 @@
+& 'D:\aboutwork\soft\hbuilder\HBuilderX\cli.exe' 'project open' '--path' 'E:\traeproject\toolsapp\mobile'
+& 'D:\aboutwork\soft\hbuilder\HBuilderX\cli.exe' 'publish app-android' '--type' 'appResource' '--project' 'E:\traeproject\toolsapp\mobile'

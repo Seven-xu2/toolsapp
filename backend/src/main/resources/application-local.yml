@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://127.0.0.1:3306/toolsapp?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true"
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt:
+    secret: local-dev-secret-local-dev-secret-123456
+    expiration-seconds: 604800

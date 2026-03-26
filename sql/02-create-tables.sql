@@ -1,0 +1,43 @@
+USE toolsapp;
+
+CREATE TABLE IF NOT EXISTS sys_user (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  phone VARCHAR(20) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  nickname VARCHAR(50) NOT NULL,
+  avatar_url VARCHAR(255) NULL,
+  status TINYINT NOT NULL DEFAULT 1,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS tool_catalog (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  tool_code VARCHAR(50) NOT NULL UNIQUE,
+  tool_name VARCHAR(50) NOT NULL,
+  icon VARCHAR(50) NOT NULL,
+  color VARCHAR(20) NOT NULL,
+  description VARCHAR(255) NULL,
+  enabled TINYINT NOT NULL DEFAULT 1,
+  sort_order INT NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS user_favorite (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  tool_code VARCHAR(50) NOT NULL,
+  created_at DATETIME NOT NULL,
+  CONSTRAINT uk_user_favorite UNIQUE (user_id, tool_code)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS user_history (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  tool_code VARCHAR(50) NOT NULL,
+  tool_name VARCHAR(50) NOT NULL,
+  summary VARCHAR(255) NOT NULL,
+  created_at DATETIME NOT NULL,
+  INDEX idx_user_history_user_created (user_id, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
