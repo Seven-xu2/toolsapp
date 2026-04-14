@@ -15,6 +15,7 @@
     { "path": "src/pages/tools/calculator", "style": { "navigationBarTitleText": "计算器" } },
     { "path": "src/pages/tools/unit-converter", "style": { "navigationBarTitleText": "单位转换" } },
     { "path": "src/pages/tools/flashlight", "style": { "navigationBarTitleText": "手电筒" } },
+    { "path": "src/pages/tools/location", "style": { "navigationBarTitleText": "精确定位" } },
     { "path": "src/pages/tools/qrcode-generator", "style": { "navigationBarTitleText": "二维码生成" } },
     { "path": "src/pages/tools/timestamp-converter", "style": { "navigationBarTitleText": "时间戳转换" } },
     { "path": "src/pages/tools/text-tools", "style": { "navigationBarTitleText": "文本工具" } },

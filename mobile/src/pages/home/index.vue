@@ -71,12 +71,20 @@ export default {
     }
   },
   async onShow() {
-    await this.toolStore.loadTools()
-    if (this.authStore.isLoggedIn()) {
-      await this.authStore.fetchProfile()
-      await this.toolStore.loadFavoriteCodes()
-    } else {
+    try {
+      await this.toolStore.loadTools()
+      if (this.authStore.isLoggedIn()) {
+        await this.authStore.fetchProfile()
+        await this.toolStore.loadFavoriteCodes()
+      } else {
+        this.toolStore.state.favoriteCodes = []
+      }
+    } catch (error) {
+      this.toolStore.state.tools = this.toolStore.state.tools && this.toolStore.state.tools.length
+        ? this.toolStore.state.tools
+        : []
       this.toolStore.state.favoriteCodes = []
+      uni.showToast({ title: '已切换到离线模式', icon: 'none' })
     }
   },
   methods: {

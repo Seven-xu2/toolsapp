@@ -45,9 +45,13 @@ export function useAuthStore() {
     if (!state.token) {
       return null
     }
-    state.user = await fetchProfile()
-    persist()
-    return state.user
+    try {
+      state.user = await fetchProfile()
+      persist()
+      return state.user
+    } catch (error) {
+      return state.user || null
+    }
   }
 
   function enterGuestMode() {

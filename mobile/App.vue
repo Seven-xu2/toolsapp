@@ -1,7 +1,13 @@
 ﻿<script>
+import { runAutoLocation } from './src/utils/location.js'
+
 export default {
   onLaunch() {
     console.log('Tools App launched')
+    runAutoLocation(false)
+  },
+  onShow() {
+    runAutoLocation(false)
   }
 }
 </script>

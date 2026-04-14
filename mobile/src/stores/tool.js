@@ -53,8 +53,12 @@ export function useToolStore() {
       state.favoriteCodes = []
       return []
     }
-    const codes = await fetchFavoriteCodes()
-    state.favoriteCodes = Array.isArray(codes) ? codes.slice() : []
+    try {
+      const codes = await fetchFavoriteCodes()
+      state.favoriteCodes = Array.isArray(codes) ? codes.slice() : []
+    } catch (error) {
+      state.favoriteCodes = []
+    }
     return state.favoriteCodes
   }
 

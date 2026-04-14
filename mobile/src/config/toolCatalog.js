@@ -30,11 +30,21 @@ export const localToolCatalog = [
     route: '/src/pages/tools/flashlight'
   },
   {
+    code: 'location',
+    name: '精确定位',
+    icon: '📍',
+    color: '#22C55E',
+    description: '首次授权后自动定位并解析详细地址',
+    enabled: 1,
+    requiresBackend: false,
+    route: '/src/pages/tools/location'
+  },
+  {
     code: 'qrcode-generator',
     name: '二维码生成',
     icon: '🔳',
     color: '#7262FD',
-    description: '本地生成二维码',
+    description: '支持文本、链接、Wi‑Fi 等类型',
     enabled: 1,
     requiresBackend: false,
     route: '/src/pages/tools/qrcode-generator'
