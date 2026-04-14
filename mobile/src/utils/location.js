@@ -182,8 +182,18 @@ export function formatLocationSummary(locationState) {
 
 export function requestLocationCoordinates() {
   return new Promise(function (resolve, reject) {
+    var locationType = (typeof uni.getSystemInfoSync === 'function') ? (() => {
+      try {
+        var sysInfo = uni.getSystemInfoSync()
+        if (sysInfo.platform === 'android' || sysInfo.platform === 'ios') {
+          return 'gcj02'
+        }
+      } catch (e) {}
+      return 'wgs84'
+    })() : 'wgs84'
+
     uni.getLocation({
-      type: 'gcj02',
+      type: locationType,
       isHighAccuracy: true,
       highAccuracyExpireTime: 5000,
       geocode: false,
